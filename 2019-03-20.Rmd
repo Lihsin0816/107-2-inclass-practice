@@ -9,3 +9,43 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+```{r}
+dialogue <- c('小明說："明天不用上課。"',
+               '小花說："真的嗎？"')
+
+cat(dialogue, sep="\n")
+```
+
+```{r}
+dialogue <- c("小明說：'明天不用上課。'",
+               "小花說：'真的嗎？'")
+
+cat(dialogue, sep="\n")
+```
+
+```{r}
+aLogical <- c(T,TRUE,F,FALSE,FALSE)
+class(aLogical)
+```
+
+```{r}
+sum(aLogical)
+```
+
+```{r}
+studentMajors <- factor(
+  c("經濟系", "經濟系", "法律系")
+)
+```
+
+```{r}
+class(studentMajors)
+```
+
+```{r}
+studentMajors0 <- c ("eco","eco","law")
+```
+```{r}
+class(studentMajors0)
+```
+
