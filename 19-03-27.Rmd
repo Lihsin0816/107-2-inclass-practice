@@ -15,6 +15,7 @@ library(lubridate)
 
 ```{r}
 twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
+twDateTime
 ```
 
 ```{r}
@@ -22,15 +23,13 @@ dtObjectVector<-ymd_hms(
   c("1970-01-01 00:02:53",
     "1980-02-11 11:25:22")
 )
+dtObjectVector
 ```
 
 ```{r}
-class(dtObject)
+class(dtObjectVector)
 ```
 
-```{r}
-dtObject
-```
 ```{r}
 Sys.timezone()
 ```
@@ -79,6 +78,7 @@ as.integer(ymd("1970-01-02"))
 as.integer(ymd("2019-03-11")) 
 ```
 
+
 ```{r}
 Object0<-ymd("2017-04-11")
 Object0 
@@ -90,6 +90,11 @@ Object1
 a <- c(1, 5, -3)
 b <- c(0.5, 12, 2)
 ```
+
+```{r}
+a + 3
+```
+
 
 ```{r}
 aL <- c(1L, 5L, -3L)
@@ -124,12 +129,36 @@ a %% bL
 ```
 
 ```{r}
+a == b
+```
+
+```{r}
+a = b
+a == b
+```
+
+```{r}
+twDateTime1 <- ymd_hms("19/09/7 12:43:09 ", tz="Asia/Taipei")
+twDateTime1
+twDateTime2 <- ymd_hms("19/03/20 13:03:30",tz="Asia/Taipei")
+twDateTime2
+twDateTime3 <- mdy_hms("03/24/19 19:02:13",tz="Asia/Taipei")
+twDateTime3
+```
+
+```{r}
+twDateTime1 +1
+twDateTime2 - twDateTime1
+```
+
+
+```{r}
 twDateTime <- ymd_hms("2019-03-18 14:04:00", tz="Asia/Taipei")
-twDateTime1 <- ymd_hms("2019-03-27 16:24:00", tz="Asia/Taipei")
-twDateTime2 <- ymd_hms("2019-03-20 12:33:00", tz="Asia/Taipei")
-twDateTime-twDateTime1
-twDateTime1-twDateTime2
-class(twDateTime1-twDateTime2)
+twDateTime4 <- ymd_hms("2019-03-27 16:24:00", tz="Asia/Taipei")
+twDateTime5 <- ymd_hms("2019-03-20 12:33:00", tz="Asia/Taipei")
+twDateTime-twDateTime4
+twDateTime4-twDateTime5
+class(twDateTime4-twDateTime5)
 ```
 
 ```{r}
@@ -144,10 +173,12 @@ startingDate <- ymd("2000-02-17")
 
 ```{r}
 startingDate + years(1)
+startingDate + years(7)
 ```
 
 ```{r}
 startingDate + dyears(1)
+startingDate + dyears(6)
 ```
 
 ```{r}
@@ -197,13 +228,26 @@ x5 %in% y5
 ```
 
 ```{r}
-x5 <- c("台北市","新北市","高雄市")
-y5 <- c("台北市","新北市")
-
-x5 %in% y5
+x6 <- c(2,NA,8)
+y6 <- c(9,NA,0)
 ```
 
 ```{r}
-is.na(x2)
+x6 + y6
+sum(x6+y6)
+sum(x6+y6,na.rm = F)
+sum(x6+y6,na.rm = T)
+```
+
+```{r}
+x7 <- NA
+x7
+is.na(x3)
+is.na(x6)
+is.na(x7)
+```
+```{r}
+0/0
+9/0
 ```
 
