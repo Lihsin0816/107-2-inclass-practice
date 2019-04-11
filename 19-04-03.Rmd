@@ -15,6 +15,44 @@ currency <- exData2$幣別
 ```
 
 ```{r}
+currency <- as.factor(currency)
+```
+
+```{r}
+class(currency)
+```
+```{r}
+levels(currency)
+```
+
+```{r}
+head(currency)
+```
+
+```{r}
+length(levels(currency))
+```
+
+```{r}
+step1_extractLevelsVector <- levels(currency)
+step1_extractLevelsVector
+```
+
+```{r}
+step2_countVectorLength <- length(step1_extractLevelsVector)
+step2_countVectorLength
+```
+
+```{r}
+head(currency)
+```
+
+```{r}
+currency2 <- c("日圓","美元","日圓")
+currency2
+```
+
+```{r}
 
 ```
 
