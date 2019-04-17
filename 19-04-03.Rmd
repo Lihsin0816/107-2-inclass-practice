@@ -114,6 +114,7 @@ head(date)
 library(lubridate)
 date <- ymd(date)
 class(date)
+date
 ```
 ```{r}
 isAfter19800801 <- date >= ymd("1980-08-01")
