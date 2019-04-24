@@ -1,0 +1,18 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+Mat2 <- matrix(c("a","b","c","d"),2,2)
+Mat2
+class(Mat2)
+typeof(Mat2)
+Mat2[[2]]
+Mat2[c(T,F,F,T)]
+```
+
