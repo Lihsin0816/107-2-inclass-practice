@@ -8,11 +8,106 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
+Mat1 <- matrix(c(1:6),2,3)
+Mat1
+class(Mat1)
+typeof(Mat1)
+```
+
+
+```{r}
 Mat2 <- matrix(c("a","b","c","d"),2,2)
 Mat2
 class(Mat2)
 typeof(Mat2)
 Mat2[[2]]
 Mat2[c(T,F,F,T)]
+```
+
+```{r}
+stuDF <- data.frame(學號=c(172,214,322,425,517),姓名=c("小明","大雄","胖虎","小新","大白"),
+                      成績=c(80,60,90,70,50))
+stuDF
+class(stuDF$姓名)
+stuDF$姓名 <- as.character(stuDF$姓名)
+class(stuDF$姓名)
+```
+```{r}
+StuList <- list(學號=c(172,214,322,425,517),姓名=c("小明","大雄","胖虎","小新","大白"),
+                      成績=c(80,60,90,70,50))
+StuList
+StuList[[2]][3]
+```
+
+```{r}
+stuDF2 <-data.frame(學號=c(172,214,322,425,517),姓名=c("小明","大雄","胖虎","小新","大白"),
+                      成績=c(80,60,90,70,50),stringsAsFactors = FALSE)
+stuDF2
+stuDF2[[2]][3]
+```
+```{r}
+class(StuList)
+```
+
+
+```{r}
+as.data.frame(StuList) -> stuDF3
+class(stuDF3)
+```
+```{r}
+stuDF3
+```
+
+
+```{r}
+as.data.frame(StuList,stringsAsFactors = F) ->stuDF4
+class(stuDF4)
+```
+
+```{r}
+stuDF4
+```
+```{r}
+LETTERS
+```
+```{r}
+m <- matrix(chosenLETTERS,2,4)
+m
+tolower(m) 
+m
+toupper(m)
+m
+```
+
+
+```{r}
+chosenLETTERS <- LETTERS[1:15]
+matObj1 <- matrix(chosenLETTERS,5,3)
+matObj1
+```
+
+```{r}
+chosenLETTERS[8]
+matObj1[8]
+```
+
+```{r}
+matObj1
+```
+
+```{r}
+matObj1[3,2]
+```
+
+```{r}
+matObj1[c(F,F,T,F,F),c(F,T,F)]
+```
+
+```{r}
+library(readr)
+classSurvey <- read_csv("https://raw.githubusercontent.com/tpemartin/github-data/master/classSurvey.csv")
+```
+```{r}
+classSurvey[c(1:60),c(4,5)]
 ```
 
