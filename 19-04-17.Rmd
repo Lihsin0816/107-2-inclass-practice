@@ -99,6 +99,16 @@ str_replace_all("https://api.github.com/repos/:owner/:repo/commits",
 commitCheck <- content(GET(commitCheckStatement))
 commitCheck
 ```
+```{r}
+commitCheck[[4]][["commit"]][["committer"]][["date"]]
+```
+```{r}
+library(lubridate)
+commitDate <- ymd_hms("2019-04-17T08:39:43Z")
+commitDate
+twTime <- with_tz(commitDate, tzone = "Asia/Taipei")
+twTime
+```
 
 ```{r}
 library(readr)
