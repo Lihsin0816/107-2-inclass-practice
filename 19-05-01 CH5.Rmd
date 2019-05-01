@@ -1,0 +1,46 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+a <- c(1, 5, -3)
+b <- c(0.5, 12, 2)
+a + b
+a - b
+a*b
+a/b
+```
+
+```{r}
+aL <- c(1L, 5L, -3L)
+bL <- c(-2L, -4L, 8L)
+aL + bL
+aL - bL
+aL*bL
+aL/bL
+aL/a
+```
+
+```{r}
+a + bL
+aL + bL
+class(a + bL)
+class(aL + bL)
+c <- 4
+c+a
+```
+
+```{r}
+a^b
+a %% b
+```
+
+```{r}
+
+```
+
