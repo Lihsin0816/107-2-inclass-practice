@@ -1,0 +1,31 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#7.5
+```{r}
+Vector1 <- letters [1:6]
+Vector1
+names(Vector1)
+```
+
+```{r}
+names(Vector1) <- c('名稱1','名稱2','名稱3','名稱4','名稱5','名稱6')
+names(Vector1)
+```
+
+```{r}
+Mat1
+names(Mat1) 
+```
+
+```{r}
+names(Mat1) <- letters[1:6]
+names(Mat1)
+```
+
