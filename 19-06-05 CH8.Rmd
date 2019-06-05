@@ -1,0 +1,67 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+supply_fun <- function(a,b,P){
+  Qs <- a+b*P # 程序產生output值
+  return(Qs) # 傳回output值
+}
+supply_fun(1,2,3)
+```
+
+```{r}
+library(stringr)
+sample(99:103,15,replace = T)-> yy
+sample(1:12,15,replace=T)-> mm
+str_c("民國",str_pad(yy,3,"left","0"),"年",mm,"月") -> twDates
+
+library(stringr); library(lubridate)
+yyyy<-as.integer(str_extract(twDates,"(?<=(民國))[:digit:]+"))+1911
+mm<-str_extract(twDates,"[:digit:]+(?=月)")
+yyyymmdd <- ymd(str_c(yyyy,mm,"01",sep="-"))
+```
+
+```{r}
+date_convert_twYM <- function(twDates){
+  yyyy<-as.integer(str_extract(twDates,"(?<=(民國))[:digit:]+"))+1911 
+  mm<-str_extract(twDates,"[:digit:]+(?=月)")
+  yyyymmdd <- ymd(str_c(yyyy,mm,"01",sep="-"))
+
+  return(yyyymmdd)
+}
+
+date_convert_twYM("民國108年5月")
+
+```
+
+```{r}
+textbookURL <- function(){
+browseURL("https://bookdown.org/tpemartin/ntpu-programming-for-data-science/function-and-conditional-execution.html#returninput")}
+textbookURL()
+```
+
+```{r}
+a <- 3
+
+testfun <- function(x){
+  y <- a/4
+  output <- x*y
+  return(output)
+}
+
+testfun(2)
+
+a <- 4
+testfun(2)
+```
+
+```{r}
+
+```
+

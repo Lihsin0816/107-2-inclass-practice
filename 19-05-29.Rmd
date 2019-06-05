@@ -82,7 +82,7 @@ demand_supply_fun <- function(P,a,b,c,d){
   Qd <- c-d*P
   return(list(供給量=Qs,需求量=Qd,超額供給量=Qs-Qd))
 }
-
+demand_supply_fun(2,3,4,5,6)
 ```
 
 
@@ -207,21 +207,45 @@ supply_fun4(P=3,-3,1)
 
 ```{r}
 #範例7 green:Implement a fizzbuzz function. It takes a single number as input. If the number is divisible by three, it returns “fizz”. If it’s divisible by five it returns “buzz”. If it’s divisible by three and five, it returns “fizzbuzz”. Otherwise, it returns the number. Make sure you first write working code before you create the function. –From, R for Data Science.
-fizzbuzz <- function(x){
-  k <- x%%3
-  j <- x%%5
-  if(k==0){
-    message("fizz")
+fizzbuzzfun <- function(x){
+  if(x %% 3 ==0){
+    return("fizz")
   }
-  else if(j==0){
-    message("buzz")
+  else if(x %% 5 ==0){
+    return("buzz")
   }
-  else if(j==0 & k==0){
-    massage("fizzbuzz")
+  else if(x %% 15 ==0){
+    return("fizzbuzz")
   }
   else{
     return(x)
   }
 }
+fizzbuzzfun(3)
+fizzbuzzfun(5)
+fizzbuzzfun(30)
+fizzbuzzfun(22)
+```
+
+```{r}
+FizzbuzzFun <- function(fizzbuzz){
+ if(fizzbuzz %% 15 ==0){
+  return("fizzbuzz")
+}
+else if(fizzbuzz %% 5 ==0){
+  return("buzz")
+}
+else if(fizzbuzz %% 3 ==0){
+  return("fizz")
+}
+else{
+  return(fizzbuzz)
+} 
+}
+
+FizzbuzzFun(3)
+FizzbuzzFun(5)
+FizzbuzzFun(15)
+FizzbuzzFun(4)
 ```
 
