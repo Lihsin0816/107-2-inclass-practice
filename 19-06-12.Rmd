@@ -15,6 +15,12 @@ studentIds5 <- studentIds[1:5] # 前5筆學號
 ```
 
 ```{r}
+i <- 1
+print(studentIds5[[i]])
+```
+
+
+```{r}
 for(i in seq_along(studentIds5)){
   print(studentIds5[[i]])
 }
@@ -23,5 +29,50 @@ for(i in seq_along(studentIds5)){
 ```{r}
 length(studentIds5)
 1:length(studentIds5)
+```
+
+```{r}
+library(stringr)
+```
+#範例二
+```{r}
+gmailAddress <- c(
+  "tim@gmail.com",
+  "anita",
+  "yellen@gmail.com",
+  "huang@gmail.com"
+)
+```
+
+```{r}
+for(i in seq_along(gmailAddress)){
+  if(!str_detect(gmailAddress[[i]],"@gmail.com")){
+    correctGmailAddress <-
+      str_c(gmailAddress[[i]],"@gmail.com")
+    gmailAddress[[i]] <- correctGmailAddress
+  }
+}
+gmailAddress[[i]]
+```
+
+```{r}
+load(url("https://www.dropbox.com/s/qnz9paigf61yjus/commitHistory.Rda?raw=1"))
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  print(commitHistory[[i]]$commit$author$name)
+}
+```
+
+```{r}
+for(i in seq_along(commitHistory)){
+  print(
+  str_c(
+    "Author is ",commitHistory[[i]]$commit$author$name,
+    ",Committer is ",commitHistory[[i]]$commit$committer$name,
+    ",CommitDate is ",commitHistory[[i]]$commit$committer$date
+  ))
+}
 ```
 
